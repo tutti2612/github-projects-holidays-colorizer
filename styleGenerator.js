@@ -14,29 +14,39 @@ function getSaturdaysAndSundays(year) {
   return dates;
 }
 
-const holidays = require("./holidays.json");
+async function fetchHolidays() {
+  const response = await fetch(
+    "https://holidays-jp.github.io/api/v1/date.json"
+  );
+  return await response.json();
+}
 
-const year = 2023;
-const weekendsLastYear = getSaturdaysAndSundays(year - 1);
-const weekendsThisYear = getSaturdaysAndSundays(year);
-const weekendsNextYear = getSaturdaysAndSundays(year + 1);
+async function main() {
+  const year = 2023;
+  const weekendsLastYear = getSaturdaysAndSundays(year - 1);
+  const weekendsThisYear = getSaturdaysAndSundays(year);
+  const weekendsNextYear = getSaturdaysAndSundays(year + 1);
+  const holidays = await fetchHolidays();
 
-const array = Object.entries({
-  ...weekendsLastYear,
-  ...weekendsThisYear,
-  ...weekendsNextYear,
-  ...holidays,
-}).map(([key, value]) => {
-  let color;
-  if (value === "sat") {
-    color = "blue";
-  } else if (value === "sun") {
-    color = "red";
-  } else {
-    color = "green";
-  }
+  const array = Object.entries({
+    ...weekendsLastYear,
+    ...weekendsThisYear,
+    ...weekendsNextYear,
+    ...holidays,
+  }).map(([key, value]) => {
+    let color;
+    if (value === "sat") {
+      color = "blue";
+    } else if (value === "sun") {
+      color = "red";
+    } else {
+      color = "green";
+    }
 
-  return `#memex-project-view-root time[datetime="${key}"] { font-weight: bold; color: ${color}; }`;
-});
+    return `#memex-project-view-root time[datetime="${key}"] { font-weight: bold; color: ${color}; }`;
+  });
 
-console.log(array.join("\n"));
+  console.log(array.join("\n"));
+}
+
+main();
