@@ -22,28 +22,22 @@ async function fetchHolidays() {
 }
 
 async function main() {
-  const year = 2023;
-  const weekendsLastYear = getSaturdaysAndSundays(year - 1);
-  const weekendsThisYear = getSaturdaysAndSundays(year);
-  const weekendsNextYear = getSaturdaysAndSundays(year + 1);
-  const holidays = await fetchHolidays();
+  const thisYear = new Date().getFullYear();
+
+  const colorMap = {
+    sat: "blue",
+    sun: "red",
+  };
 
   const array = Object.entries({
-    ...weekendsLastYear,
-    ...weekendsThisYear,
-    ...weekendsNextYear,
-    ...holidays,
+    ...getSaturdaysAndSundays(thisYear - 1),
+    ...getSaturdaysAndSundays(thisYear),
+    ...getSaturdaysAndSundays(thisYear + 1),
+    ...(await fetchHolidays()),
   }).map(([key, value]) => {
-    let color;
-    if (value === "sat") {
-      color = "blue";
-    } else if (value === "sun") {
-      color = "red";
-    } else {
-      color = "green";
-    }
-
-    return `#memex-project-view-root time[datetime="${key}"] { font-weight: bold; color: ${color}; }`;
+    return `#memex-project-view-root time[datetime="${key}"] { font-weight: bold; color: ${
+      colorMap[value] || "green"
+    }; }`;
   });
 
   console.log(array.join("\n"));
