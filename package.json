@@ -4,7 +4,9 @@
   "description": "Colorize the Gantt chart in GitHub Projects to make it easier to understand weekends and holidays.",
   "main": "styleGenerator.js",
   "scripts": {
-    "build": "rm -rf dist && mkdir dist && cp manifest.json dist && node styleGenerator.js > dist/index.css"
+    "build": "rm -rf dist && mkdir dist && cp manifest.json dist && node styleGenerator.js > dist/index.css",
+    "build:zip": "yarn build && yarn zip",
+    "zip": "rm -rf dist.zip && zip -r dist.zip dist"
   },
   "keywords": [],
   "author": "Kohei Tsuchiya",
