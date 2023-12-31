@@ -24,20 +24,14 @@ async function fetchHolidays() {
 async function main() {
   const thisYear = new Date().getFullYear();
 
-  const colorMap = {
-    sat: "blue",
-    sun: "red",
-  };
-
   const array = Object.entries({
     ...getSaturdaysAndSundays(thisYear - 1),
     ...getSaturdaysAndSundays(thisYear),
     ...getSaturdaysAndSundays(thisYear + 1),
     ...(await fetchHolidays()),
   }).map(([key, value]) => {
-    return `#memex-project-view-root time[datetime="${key}"] { font-weight: bold; color: ${
-      colorMap[value] || "green"
-    }; }`;
+    const color = value === "sat" ? "blue" : value === "sun" ? "red" : "green";
+    return `#memex-project-view-root time[datetime="${key}"] { font-weight: bold; color: ${color}; }`;
   });
 
   console.log(array.join("\n"));
