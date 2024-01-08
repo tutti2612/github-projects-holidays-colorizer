@@ -21,20 +21,23 @@ async function fetchHolidays() {
   return await response.json();
 }
 
-async function main() {
-  const thisYear = new Date().getFullYear();
-
+export async function generateStyle(year: number) {
   const array = Object.entries({
-    ...getSaturdaysAndSundays(thisYear - 1),
-    ...getSaturdaysAndSundays(thisYear),
-    ...getSaturdaysAndSundays(thisYear + 1),
+    ...getSaturdaysAndSundays(year - 1),
+    ...getSaturdaysAndSundays(year),
+    ...getSaturdaysAndSundays(year + 1),
     ...(await fetchHolidays()),
   }).map(([key, value]) => {
     const color = value === "sat" ? "blue" : value === "sun" ? "red" : "green";
     return `#memex-project-view-root time[datetime="${key}"] { font-weight: bold; color: ${color}; }`;
   });
 
-  console.log(array.join("\n"));
+  return array.join("\n");
+}
+
+async function main() {
+  const thisYear = new Date().getFullYear();
+  console.log(await generateStyle(thisYear));
 }
 
 main();
