@@ -10,7 +10,7 @@
     "lint:fix": "biome lint . --apply",
     "check": "biome check .",
     "check:fix": "biome check . --apply",
-    "build": "rm -rf dist && mkdir dist && cp manifest.json dist && node styleGenerator.js > dist/index.css",
+    "build": "rm -rf dist && mkdir dist && cp manifest.json dist && bun styleGenerator.ts > dist/index.css",
     "build:zip": "yarn build && yarn zip",
     "zip": "rm -rf dist.zip && zip -r dist.zip dist"
   },

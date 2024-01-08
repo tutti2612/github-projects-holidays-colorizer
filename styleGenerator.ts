@@ -1,4 +1,4 @@
-function getSaturdaysAndSundays(year) {
+function getSaturdaysAndSundays(year: number) {
   const dates = {};
   const currentDate = new Date(`${year}-01-01`);
 
