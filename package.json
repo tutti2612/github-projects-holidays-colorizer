@@ -16,6 +16,7 @@
   },
   "keywords": [],
   "author": "Kohei Tsuchiya",
+  "homepage": "https://chromewebstore.google.com/detail/github-projects-holidays/cmpiijnoijofgoikgiajacmpmgcdokkn?hl=ja",
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "1.4.1"
