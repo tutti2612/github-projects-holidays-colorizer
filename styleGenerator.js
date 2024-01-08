@@ -1,6 +1,6 @@
 function getSaturdaysAndSundays(year) {
-  let dates = {};
-  let currentDate = new Date(`${year}-01-01`);
+  const dates = {};
+  const currentDate = new Date(`${year}-01-01`);
 
   while (currentDate.getFullYear() === year) {
     if (currentDate.getDay() === 0 || currentDate.getDay() === 6) {

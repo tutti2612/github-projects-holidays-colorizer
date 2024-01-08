@@ -4,6 +4,12 @@
   "description": "Colorize the Gantt chart in GitHub Projects to make it easier to understand weekends and holidays.",
   "main": "styleGenerator.js",
   "scripts": {
+    "format": "biome format .",
+    "format:fix": "biome format . --write",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint . --apply",
+    "check": "biome check .",
+    "check:fix": "biome check . --apply",
     "build": "rm -rf dist && mkdir dist && cp manifest.json dist && node styleGenerator.js > dist/index.css",
     "build:zip": "yarn build && yarn zip",
     "zip": "rm -rf dist.zip && zip -r dist.zip dist"
