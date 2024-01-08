@@ -10,5 +10,8 @@
   },
   "keywords": [],
   "author": "Kohei Tsuchiya",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "1.4.1"
+  }
 }
