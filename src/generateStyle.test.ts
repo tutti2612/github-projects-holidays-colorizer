@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { generateStyle } from "../src/generateStyle";
+import { generateStyle } from "./generateStyle";
 
 describe("generateStyle", () => {
   test("2023", async () => {
