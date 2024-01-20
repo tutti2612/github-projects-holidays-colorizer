@@ -27,9 +27,5 @@ export function generateStyle(year: number) {
     return `#memex-project-view-root time[datetime="${key}"] { font-weight: bold; color: ${color}; }`;
   });
 
-  array.push(
-    '#memex-project-view-root div[data-testid="roadmap-items"] div.Box-sc-g0xbh4-0.kCiBCp { border-right: 1px dotted rgb(208, 215, 222); width: 241px;}'
-  );
-
   return array.join("\n");
 }

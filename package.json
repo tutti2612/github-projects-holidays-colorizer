@@ -9,7 +9,7 @@
     "lint:fix": "biome lint . --apply",
     "check": "biome check .",
     "check:fix": "biome check . --apply",
-    "build": "rm -rf dist && mkdir dist && cp manifest.json dist && bun bin/styleGenerator.ts > dist/index.css",
+    "build": "rm -rf dist && mkdir dist && cp manifest.json src/index.css dist && bun bin/styleGenerator.ts >> dist/index.css",
     "build:zip": "pnpm build && pnpm zip",
     "zip": "rm -rf dist.zip && zip -r dist.zip dist",
     "test": "vitest",

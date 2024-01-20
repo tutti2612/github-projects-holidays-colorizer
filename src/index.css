@@ -1,0 +1,9 @@
+#memex-project-view-root
+  div[data-testid="roadmap-items"]
+  div.Box-sc-g0xbh4-0.kCiBCp {
+  border-left: 1px dotted rgb(208, 215, 222);
+  border-right: 1px solid rgb(208, 215, 222);
+  width: 96px;
+  transform: translateX(-96px);
+  background-color: #eaeef2;
+}
