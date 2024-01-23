@@ -1,6 +1,6 @@
 {
   "name": "github-projects-holidays-colorizer",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Colorize the Gantt chart in GitHub Projects to make it easier to understand weekends and holidays.",
   "scripts": {
     "format": "biome format .",
