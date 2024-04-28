@@ -1,4 +1,4 @@
-#memex-project-view-root div.krgVMG + div.jaqUIB div.kCiBCp {
+#memex-project-view-root div[data-testid="roadmap-items"] div[style^="left"] {
   border-left: 1px dotted rgb(208, 215, 222);
   border-right: 1px solid rgb(208, 215, 222);
   width: 96px;
