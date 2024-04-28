@@ -12,7 +12,7 @@
     "build": "sh ./scripts/build.sh",
     "build:zip": "pnpm build && pnpm zip",
     "zip": "rm -rf dist.zip && zip -r dist.zip dist",
-    "test": "vitest",
+    "test": "vitest run",
     "coverage": "vitest run --coverage"
   },
   "keywords": [],
