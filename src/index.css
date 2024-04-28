@@ -1,4 +1,4 @@
-#memex-project-view-root div[data-testid="roadmap-items"] div[style^="left"] {
+#memex-project-view-root div[data-testid="roadmap-items"] > div > div[style^="left"]:not([data-testid="roadmap-today-marker"]):not([role="row"]) {
   border-left: 1px dotted rgb(208, 215, 222);
   border-right: 1px solid rgb(208, 215, 222);
   width: 96px;
