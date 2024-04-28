@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "GitHub Projects Holidays Colorizer",
-  "version": "0.2.1",
+  "version": "0.3.1",
   "description": "Colorize the Gantt chart in GitHub Projects to make it easier to understand weekends and holidays.",
   "content_scripts": [
     {
