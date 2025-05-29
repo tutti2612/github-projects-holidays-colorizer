@@ -23,8 +23,23 @@ export function generateStyle(year: number) {
     ...getSaturdaysAndSundays(year + 1),
     ...holidays,
   }).map(([key, value]) => {
-    const color = value === "sat" ? "blue" : value === "sun" ? "red" : "green";
-    return `#memex-project-view-root time[datetime="${key}"] { font-weight: bold; color: ${color}; }`;
+    const lightModeColor =
+      value === "sat" ? "blue" : value === "sun" ? "red" : "green";
+    const darkModeColor =
+      value === "sat"
+        ? "royalblue"
+        : value === "sun"
+          ? "indianred"
+          : "seagreen";
+    return `
+#memex-project-view-root time[datetime="${key}"] {
+  font-weight: bold;
+  color: ${lightModeColor};
+}
+#memex-root[data-current-theme-color-scheme="dark"] #memex-project-view-root time[datetime="${key}"] {
+  font-weight: bold;
+  color: ${darkModeColor};
+}`;
   });
 
   return array.join("\n");
