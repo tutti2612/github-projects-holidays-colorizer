@@ -2,7 +2,7 @@ import { describe, expect, test } from "vitest";
 import { generateStyle } from "./generateStyle";
 import holidays from "./holidays.json";
 
-const YEAR = 2024;
+const YEAR = 2025;
 const generatedStyle = generateStyle(YEAR);
 
 // 指定された年の祝日ではない特定の曜日を見つける関数
