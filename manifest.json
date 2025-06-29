@@ -6,7 +6,8 @@
   "content_scripts": [
     {
       "matches": ["https://github.com/*/projects/*"],
-      "css": ["index.css"]
+      "css": ["index.css"],
+      "js": ["index.js"]
     }
   ]
 }
