@@ -5,3 +5,11 @@ div[data-holidays-colorizer="true"]:not([data-holidays-colorizer="last"]) {
   transform: translateX(-96px);
   background-color: #eaeef2;
 }
+
+#memex-root[data-current-theme-color-scheme="dark"] div[data-holidays-colorizer="true"]:not([data-holidays-colorizer="last"]) {
+  border-left: 1px dotted #5d5d5d;
+  border-right: 1px solid #5d5d5d;
+  width: 96px;
+  transform: translateX(-96px);
+  background-color: #242424;
+}
