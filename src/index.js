@@ -10,11 +10,9 @@ function onUrlChange() {
 
   if (allLeftDivs.length === 0) return;
 
-  for (const div of allLeftDivs) {
-    div.dataset.holidaysColorizer = "true";
+  for (let i = 0; i < 53; i++) {
+    allLeftDivs[i].dataset.holidaysColorizer = "true";
   }
-
-  allLeftDivs[allLeftDivs.length - 1].dataset.holidaysColorizer = "last";
 }
 
 const observeUrlChanges = () => {
